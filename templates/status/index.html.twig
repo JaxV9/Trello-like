@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StatusController!{% endblock %}
+
+{% block body %}
+
+
+<section>
+
+    <a href="/tasks">
+        <div class="go_tasks">
+            <h1>👉 Return check your tasks</h1>
+        </div>
+    </a>
+
+    <div class="scroll">
+        <div class="mod_ticket">
+            {% if task.getStatus().getLabel == "New" %}
+                <div class="status_red" style="display: inline-block;">
+                    <p><strong>Status:</strong> {{ task.getStatus().getLabel() }}</p>
+                </div>
+        </span>
+        {% elseif task.getStatus().getLabel == "In progress" %}
+                <div class="status_yellow" style="display: inline-block;">
+                    <p><strong>Status:</strong> {{ task.getStatus().getLabel() }}</p>
+                </div>
+        </span>
+        {% elseif task.getStatus().getLabel == "Done" %}
+                <div class="status_green" style="display: inline-block;">
+                    <p><strong>Status:</strong> {{ task.getStatus().getLabel() }}</p>
+                </div>
+            </span>
+        {% endif %}
+
+            <h1>Change the status of "{{ task.getTitle }}"</h1>*
+
+            <p class="p_white_2">{{ task.getContent }}</p><br/>
+
+            <p class="p_white_2"><strong>Created at :</strong> {{ task.getCreatedAt | date('d/m/Y') }} | 
+                <strong>Last update :</strong> {{ task.getUpdatedAt | date('d/m/Y') }} | 
+                <strong>Completed at :</strong> {{ task.getCompletedAt | date('d/m/Y') }} |</p>
+
+            <p class="p_white_2"><strong>Users :</strong>
+                {% for user in task.getUsers() %}
+                    {{ user.getFirstName }} {{ user.getLastName }} ({{ user.getEmail }}) | 
+                {% endfor %}
+            </p>
+            {{ form(form) }}
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

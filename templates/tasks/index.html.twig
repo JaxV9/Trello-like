@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TasksController!{% endblock %}
+
+{% block body %}
+
+<section>
+
+<div id="blur" class="blur_none">
+</div>
+<div class="container">
+    <div class="space">
+    </div>
+
+    <a href="/user">
+        <div class="go_user">
+            <h1>👉 Create user</h1>
+        </div>
+    </a>
+
+        <div class="button" onclick="changeClassB()">
+            <?xml version="1.0" encoding="UTF-8"?><svg width="32px" height="32px" stroke-width="3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#e6e6e6"><path d="M8 12h4m4 0h-4m0 0V8m0 4v4M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <p class="p_white_task" >ADD TASK</p>
+        </div>
+
+
+        <div class="card_addTasksHide" id="addTask">
+            <?xml version="1.0" encoding="UTF-8"?><svg class="close" onclick="changeClass()" width="40px" height="40px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#e6e6e6"><path d="M9.172 14.828L12.001 12m2.828-2.828L12.001 12m0 0L9.172 9.172M12.001 12l2.828 2.828M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#e6e6e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <h1>Create a task ✅</h1>
+
+                {{ form_start(MyFormTask) }}
+
+
+                    {{ form_row(MyFormTask.title) }}
+
+                    {{ form_row(MyFormTask.content) }}
+
+                    {{ form_row(MyFormTask.created_at) }}<br/>
+
+                    <p class="p_white_task_2">Choose one or more users</p>
+
+                    {{ form_row(MyFormTask.users) }}<br/>
+
+                    <p class="p_white_task_2">Completed at</p>
+
+                    {{ form_row(MyFormTask.completed_at) }}
+
+                    {{ form_row(MyFormTask.status) }}
+
+                    <input type="submit" class="submitUser" value="Create">
+
+                {{ form_end(MyFormTask) }}
+    
+        </div>
+
+
+
+
+        <div>
+            <div class="card_Tasks">
+                <h1>Tasks list 📝</h1>
+
+                <div class="scroll">
+                    {% for task in tasks|reverse %}
+                    <div class="ticket">
+                        <span>
+                        <div class="button_edit" style="display: inline-block;">
+                            <a href="/status/{{ task.getId }}">
+                                <p class="p_white_task">CLICK TO UPDATE</p>
+                            </a>
+                        </div>
+                        {% if task.getStatus().getLabel == "New" %}
+                            <a href="/status/{{ task.getId }}">
+                                <div class="status_red" style="display: inline-block;">
+                                    <p><strong>👉 Status:</strong> {{ task.getStatus().getLabel() }}</p>
+                                </div>
+                            </a>
+                        </span>
+                        {% elseif task.getStatus().getLabel == "In progress" %}
+                            <a href="/status/{{ task.getId }}">
+                                <div class="status_yellow" style="display: inline-block;">
+                                    <p><strong>👉 Status:</strong> {{ task.getStatus().getLabel() }}</p>
+                                </div>
+                            </a>
+                        </span>
+                        {% elseif task.getStatus().getLabel == "Done" %}
+                            <a href="/status/{{ task.getId }}">
+                                <div class="status_green" style="display: inline-block;">
+                                    <p><strong>👉 Status:</strong> {{ task.getStatus().getLabel() }}</p>
+                                </div>
+                            </a>
+                            </span>
+                        {% endif %}
+
+                        <div class="div">
+                        </div>
+
+                        <h3>{{ task.getTitle }}</h3><br/>
+
+                        <p class="content">{{ task.getContent }}</p><br/>
+
+                        
+                        <p class="details"><strong>Created at :</strong> {{ task.getCreatedAt | date('d/m/Y') }} | 
+                        <strong>Last update :</strong> {{ task.getUpdatedAt | date('d/m/Y') }} | 
+                        <strong>Completed at :</strong> {{ task.getCompletedAt | date('d/m/Y') }} |</p>
+                        <p class="details"><strong>For :</strong>
+                            {% for user in task.getUsers() %}
+                                {{ user.getFirstName }} {{ user.getLastName }} ({{ user.getEmail }}) | 
+                            {% endfor %}
+                        </p>
+                    </div>
+                    {% endfor%}
+                </div>
+                
+            </div>
+        </div>
+        
+
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+<section>
+
+    <a href="/tasks">
+        <div class="go_tasks">
+            <h1>👉 Check tasks</h1>
+        </div>
+    </a>
+
+    <div class="card_user">
+
+        <h1>Create an account for your team 🤘</h1>
+
+        {{ form(MyForm) }}
+
+    </div>
+
+</section>
+
+{% endblock %}

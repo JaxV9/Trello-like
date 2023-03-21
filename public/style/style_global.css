@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    background:-moz-radial-gradient(circle at 0% 0%, rgba(69, 78, 83, 1) 0%, rgba(50, 56, 60, 1) 100%);
+    background: rgb(83,105,112);
+    background: linear-gradient(90deg, rgba(83,105,112,1) 0%, rgba(41,46,73,1) 100%);    
+}
+
+h1 {
+    font-family: lato, sans-serif;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.h1_black {
+    font-family: lato, sans-serif;
+    font-size: 28px;
+    color: black;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: lato, sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: lato, sans-serif;
+    color: black;
+    font-size: 16px;
+}
+
+.p_white {
+    font-family: lato, sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+.p_white_2 {
+    font-family: lato, sans-serif;
+    color: white;
+    font-size: 16px;
+    margin-left: 28px;
+}
+
+.p_white_task {
+    font-family: lato, sans-serif;
+    color: black;
+    font-size: 16px;
+    display: block;
+    width: 90%;
+}
+
+.p_white_task_2 {
+    font-family: lato, sans-serif;
+    color: white;
+    font-size: 16px;
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    font-family: lato, sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+.div {
+    width: 95%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    background-color: black;
+}
+
+.div_rev {
+    width: 95%;
+    height: 0.5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    background-color: black;
+}

@@ -1,0 +1,115 @@
+section {
+    height: 80vh;
+}
+
+.go_tasks {
+    width: fit-content;
+    height: fit-content;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 64px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: lato, sans-serif;
+    font-weight: 800;
+    background: rgb(20,21,25);
+    background: rgb(20,21,25);
+    background: linear-gradient(0deg, rgba(20,21,25,0.7) 0%, rgba(34,34,44,0.7) 100%);
+}
+
+.go_tasks:hover {
+    background: rgb(20,21,25);
+    background: rgb(20,21,25);
+    background: linear-gradient(0deg, rgba(20,21,25,1) 0%, rgba(34,34,44,1) 100%);
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.539);
+    font-size: 18px;
+ }
+ input::-moz-placeholder {  
+    color: rgba(255, 255, 255, 0.539);
+    font-size: 18px;
+ }
+ input:-ms-input-placeholder {  
+    color: rgba(255, 255, 255, 0.539);
+    font-size: 18px;
+ }
+ input:-moz-placeholder {  
+    color: rgba(255, 255, 255, 0.539);
+    font-size: 18px;
+ }
+
+ input::-webkit-input-placeholder {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+ input:focus {
+    outline: none;
+  }
+
+.card_user {
+    border-radius: 8px;
+    padding: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    min-width: 300px;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    background: rgb(20,21,25);
+    background: rgb(20,21,25);
+    background: linear-gradient(0deg, rgba(20,21,25,1) 0%, rgba(34,34,44,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.formUser {
+    width: 90%;
+    height: 28px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 42px;
+    display: block;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: white;
+    border-left: none;
+    border-right: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 18px;
+    font-family: lato, sans-serif;
+
+}
+
+.submitUser {
+    width: 70%;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 64px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: lato, sans-serif;
+    font-weight: 800;
+}
+
+.submitUser:hover {
+    background-color: rgb(208, 208, 208);
+        cursor: pointer;
+}
